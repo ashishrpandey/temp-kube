@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-liveness-prob
+spec:
+  containers:
+  - image: ashishrpandey/unhealthy-job
+    name: liveness-prob-container 
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 15
+

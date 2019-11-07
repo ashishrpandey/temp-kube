@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: appzeke-manual
+  namespace: custom-namespace
+spec:
+  containers:
+  - image: ashishrpandey/appzeke
+    name: appzeke
+    ports:
+    - containerPort: 8080
+      protocol: TCP

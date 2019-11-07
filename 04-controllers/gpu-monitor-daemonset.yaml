@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: gpu-monitor
+spec:
+  selector:
+    matchLabels:
+      app: gpu-monitor
+  template:
+    metadata:
+      labels:
+        app: gpu-monitor
+    spec:
+      nodeSelector:
+        gpu: true
+      containers:
+      - name: main
+        image: ashishrpandey/gpu-monitor
+

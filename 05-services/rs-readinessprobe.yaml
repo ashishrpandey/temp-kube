@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: appzeke
+spec:
+  replicas: 3
+  selector:
+    app: appzeke
+  template:
+    metadata:
+      labels:
+        app: appzeke
+    spec:
+      containers:
+      - name: appzeke
+        image: ashishrpandey/appzeke
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          exec:
+            command:
+            - ls
+            - /var/ready
+

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: appzeke-gpu
+spec:
+  nodeSelector:
+    gpu: "true"
+  containers:
+  - image: ashishrpandey/appzeke
+    name: appzeke

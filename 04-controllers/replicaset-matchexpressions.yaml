@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: appzeke
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+         - appzeke
+  template:
+    metadata:
+      labels:
+        app: appzeke
+    spec:
+      containers:
+      - name: appzeke
+        image: ashishrpandey/appzeke

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-pod
+spec:
+  containers:
+  - image: ashishrpandey/unhealthy-job
+    name: appzeke
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+
